@@ -18,5 +18,5 @@ CROSS APPLY sys.dm_exec_sql_text(r.[sql_handle]) AS t
 cross APPLY
     sys.dm_exec_query_plan ([r].[plan_handle]) AS [s_eqp]
 WHERE r.session_id <> @@SPID AND r.session_id > 50
---and s.login_name not  like '%\%'
+and s.login_name not  like '%\%'
 ORDER BY 5 desc
